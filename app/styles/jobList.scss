@@ -1,0 +1,84 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+
+	.main {
+		position: absolute;
+		left: 15%;
+		padding: 1rem 2rem;
+
+		.jobList, .about {
+			ul {
+				list-style-type: none;
+				padding: 0;
+
+				li {
+					margin-bottom: 1rem;
+
+					a {
+						text-decoration: none;
+						cursor: pointer;
+						margin-right: 1rem;
+					}
+				}
+			}
+
+			p {
+				max-width: 75%;
+			}
+		}
+	}
+
+	.sideBar {
+		position: fixed;
+		background-color: #218282;
+		width: 15%;
+		height: 100%;
+		text-align: center;
+
+		a {
+			display: block;
+			font-size: 1.5rem;
+			margin-bottom: 5rem;
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		:first-child {
+			margin-top: 10rem;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		.main {
+			top: 3rem;
+			left: 0;
+
+			.jobList, .about {
+				p {
+					max-width: 100%;
+				}
+			}
+		}
+
+		.sideBar {
+			width: 100%;
+			height: auto;
+			padding: 1rem 0;
+			z-index: 2;
+			box-shadow: 0px 2px 3px #616161;
+
+			a {
+				display: inline-block;
+				margin-bottom: 0;
+			}
+
+			:first-child {
+				margin-top: 0;
+				margin-right: 3rem;
+			}
+		}
+	}
+}
