@@ -7,7 +7,7 @@ const App = () =>
     <div>
         <div className={sideBar}>
             <Link to="/about">About</Link>
-            <Link to="/all_jobs">Job List</Link>
+            <Link to="/all_jobs">All Jobs</Link>
             <Link to="/favorites">Favorites</Link>
         </div>
         <div className={main}>
