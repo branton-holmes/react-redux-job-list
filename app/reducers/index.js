@@ -16,10 +16,14 @@ const favorites = (state = [], action) => {
         case types.FAVORITE:
             const index = state.indexOf(action.key);
             if (index === -1) {
-                state.push(action.key);
-                return state;
-            } state.splice(index, 1);
-            return state;
+                return [
+                    ...state,
+                    action.key
+                ];
+            } const newArr = state.filter((f) => {
+                return f !== action.key;
+            });
+            return newArr;
         default:
             return state;
     }
