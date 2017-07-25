@@ -44,9 +44,6 @@ AllJobs.propTypes = {
     loadJobs: PropTypes.func
 };
 
-/*  This successfully adds the jobs to the application state, but only after the component has rendered.
-This is my first time working with redux instead of flux, so I'm still wrapping my head around how the application store works.
-In flux, I would use componentWillMount to dispatch an action and add it to the store. Still figuring out the best way to handle this in redux. */
 const mapStateToProps = (state) => {
     return {
         jobs: state.jobs,
