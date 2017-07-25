@@ -9,6 +9,9 @@
     "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
     "eslint": "eslint ."
   },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/jest-css-modules"
+  },
   "keywords": [
     "es6",
     "react",
@@ -47,14 +50,15 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.16.1",
     "jest": "^20.0.4",
+    "jest-css-modules": "^1.1.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.7.0",
     "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.0.2",
+    "react-test-renderer": "^15.6.1",
     "redux-devtools": "^3.2.0",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
-    "react-test-renderer": "^15.6.1",
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
     "stats-webpack-plugin": "^0.3.1",

@@ -321,13 +321,13 @@ const jobs = [
 
 test('JobTable correctly filters out correct number of items', () => {
     const jobList = shallow(
-        <JobTable jobs={jobs} filter="" />
+        <JobTable jobs={jobs} filter="" favorites={[]} favoriteClicked={() => {}}/>
     );
 
     expect(jobList.node.props.children[1].length).toEqual(jobs.length);
 
     const jobListFiltered = shallow(
-        <JobTable jobs={jobs} filter="web" />
+        <JobTable jobs={jobs} filter="web" favorites={[]} favoriteClicked={() => {}}/>
     );
 
     expect(jobListFiltered.node.props.children[1].length).toEqual(5);
