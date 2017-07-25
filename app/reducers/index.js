@@ -11,6 +11,20 @@ const filter = (state = '', action) => {
     }
 };
 
+const favorites = (state = [], action) => {
+    switch (action.type) {
+        case types.FAVORITE:
+            const index = state.indexOf(action.key);
+            if (index === -1) {
+                state.push(action.key);
+                return state;
+            } state.splice(index, 1);
+            return state;
+        default:
+            return state;
+    }
+};
+
 const jobs = (state = {isFetching: false, items: []}, action) => {
     switch (action.type) {
         case types.REQUEST_JOBS:
@@ -29,6 +43,7 @@ const jobs = (state = {isFetching: false, items: []}, action) => {
 
 const rootReducer = combineReducers({
     filter,
+    favorites,
     jobs,
     routing
 });

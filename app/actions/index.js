@@ -8,6 +8,14 @@ export function filterTable(filter) {
     };
 }
 
+export function favorite(event) {
+    const key = event.target.id;
+    return {
+        type: types.FAVORITE,
+        key
+    };
+}
+
 export function requestJobs() {
     return {
         type: types.REQUEST_JOBS

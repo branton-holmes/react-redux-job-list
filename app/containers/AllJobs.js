@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
-import {filterTable} from '../actions';
+import {filterTable, favorite} from '../actions';
 import {fetchJobsIfNeeded} from '../actions/index';
 import JobTable from '../components/JobTable';
 import {jobList} from '../styles/jobList.scss';
@@ -17,7 +17,7 @@ class AllJobs extends React.Component {
     }
 
     render() {
-        const {filter, jobs, onFilter} = this.props;
+        const {filter, jobs, favorites, onFilter, onFavorite} = this.props;
         let input;
 
         return (
@@ -30,7 +30,7 @@ class AllJobs extends React.Component {
                         input = node;
                     }}
                     onChange={() => onFilter(input.value)}/>
-                <JobTable filter={filter} jobs={jobs.items}/>
+                <JobTable filter={filter} jobs={jobs.items} favorites={favorites} favoriteClicked={onFavorite}/>
             </div>
         );
     }
@@ -41,12 +41,14 @@ AllJobs.propTypes = {
     jobs: PropTypes.object,
     favorites: PropTypes.array,
     onFilter: PropTypes.func,
+    onFavorite: PropTypes.func,
     loadJobs: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
         jobs: state.jobs,
+        favorites: state.favorites,
         filter: state.filter
     };
 };
@@ -54,6 +56,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFilter: filterText => dispatch(filterTable(filterText)),
+        onFavorite: event => dispatch(favorite(event)),
         loadJobs: () => dispatch(fetchJobsIfNeeded())
     };
 };
