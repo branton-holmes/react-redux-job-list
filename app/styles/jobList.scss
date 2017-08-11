@@ -23,23 +23,16 @@ body {
 					a {
 						text-decoration: none;
 						cursor: pointer;
-						margin-right: 1rem;
+						margin-right: .5rem;
 					}
 
-					button {
-						border: none;
-						border-radius: 3px;
-						padding: .25rem .5rem;
-						box-shadow: 1px 1px 3px #6e6e6e;
+					span {
 						cursor: pointer;
-
 					}
-				}
 
-				.favorite {
-					button {
-						background: #daa520;
-						color: white;
+					&.favorite span {
+						color: #daa520;
+
 					}
 				}
 			}
