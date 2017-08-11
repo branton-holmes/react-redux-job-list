@@ -11,7 +11,7 @@ class AllJobs extends React.Component {
         super(props);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const { loadJobs } = this.props;
         loadJobs();
     }
